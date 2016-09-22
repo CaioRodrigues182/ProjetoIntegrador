@@ -2,9 +2,9 @@ package servico;
 
 import java.util.List;
 
-import dao.EntregaDao;
 import dao.DaoFactory;
-import impl.EM;
+import dao.EntregaDao;
+import dao.Transaction;
 import dominio.Entrega;
 
 public class EntregaServico {
@@ -16,16 +16,32 @@ public class EntregaServico {
 	}
 	
 	public void inserirAtualizar(Entrega x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
-	}
+		try {
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+			}
+			catch (RuntimeException e) {
+				if (Transaction.isActive()){
+					Transaction.rollback();
+				}
+				System.out.println("Erro: " + e.getMessage());
+			}
+		}
 	
 	public void excluir(Entrega x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.excluir(x);
-		EM.getLocalEm().getTransaction().commit();
-	}
+		try {
+			Transaction.begin();
+			dao.excluir(x);
+			Transaction.commit();
+			}
+			catch (RuntimeException e) {
+				if (Transaction.isActive()){
+					Transaction.rollback();
+				}
+				System.out.println("Erro: " + e.getMessage());
+			}
+		}
 	
 	public Entrega buscar(int cod) {
 		return dao.buscar(cod);

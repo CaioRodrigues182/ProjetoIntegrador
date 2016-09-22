@@ -42,14 +42,14 @@ public class Instanciacao extends HttpServlet {
 		Cliente c2 = new Cliente(null, "Andre", "andre.rod@gmail.com", "09524944658");
 		Cliente c3 = new Cliente(null, "Lucas", "lucas.rod@gmail.com", "09543219465");
 		
-		Endereco e1 = new Endereco(null, "asdasd", 452, "AP", "Sao judas", "35610000", c1);
-		Endereco e2 = new Endereco(null, "gdfgdgg", 600, "AP", "Daniel fonseca", "34231236", c1);
+		Endereco e1 = new Endereco(null, "Rua 1", 452, "AP", "Sao judas", "35610000", c1);
+		Endereco e2 = new Endereco(null, "Rua Osvaldo Rodrigues", 600, "AP", "Daniel fonseca", "34231236", c1);
 		
-		Endereco e3 = new Endereco(null, "sdasdsada", 555, "AP", "Niteroi", "45435354", c2);
-		Endereco e4 = new Endereco(null, "ftdhregreg", 672, "AP", "Interlagos", "35610000", c2);
+		Endereco e3 = new Endereco(null, "Rua Neto Campos", 555, "AP", "Niteroi", "45435354", c2);
+		Endereco e4 = new Endereco(null, "Rua 2", 672, "AP", "Interlagos", "35610000", c2);
 		
-		Endereco e5 = new Endereco(null, "jytjsf", 373, "AP", "Martins", "324324234", c3);
-		Endereco e6 = new Endereco(null, "kkyjuyj", 1243, "AP", "Centro", "465754634", c3);
+		Endereco e5 = new Endereco(null, "Rua 1", 373, "AP", "Martins", "324324234", c3);
+		Endereco e6 = new Endereco(null, "Rua Mario Freitas", 1243, "AP", "Centro", "465754634", c3);
 		
 		Fornecedor f1 = new Fornecedor(null, "Rodrigo", "2342424", "994347242", "rodrigo.forn@hotmail.com", new BigDecimal ("20000.00"), sdf.parse("11/08/2010"));
 		Fornecedor f2 = new Fornecedor(null, "Joao", "242342423", "99324545", "jao.forn@hotmail.com", new BigDecimal ("20000.00"), sdf.parse("01/10/2013"));

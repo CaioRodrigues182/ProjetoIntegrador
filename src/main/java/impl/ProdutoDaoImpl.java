@@ -1,5 +1,6 @@
 package impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -41,5 +42,17 @@ public class ProdutoDaoImpl implements ProdutoDao {
 		String jpql = "SELECT x FROM Produto x";
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Produto> buscaNomePreco(String nome, BigDecimal valorMin, BigDecimal valorMax){
+		String jpql = "SELECT x FROM Produto x WHERE x.nome LIKE :p1 AND x.preco >= :p2 AND x.preco <= :p3 ORDER BY x.nome";
+			Query query = em.createQuery(jpql);
+			query.setParameter("p1", "%"+nome+"%");
+			query.setParameter("p2", valorMin);
+			query.setParameter("p3", valorMax);
+		return query.getResultList();
+		
 	}
 }

@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import dao.EnderecoDao;
+import dominio.Cliente;
 import dominio.Endereco;
 
 public class EnderecoDaoImpl implements EnderecoDao {
@@ -42,4 +43,14 @@ public class EnderecoDaoImpl implements EnderecoDao {
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Endereco> buscarEnderecosCliente(Cliente c) {
+		String jpql = "SELECT x FROM Endereco x WHERE x.cliente = :c1";
+		Query query = em.createQuery(jpql);
+		query.setParameter("c1", c);
+		return query.getResultList();
+	}
+	
+	
 }

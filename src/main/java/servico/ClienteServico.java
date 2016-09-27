@@ -4,7 +4,7 @@ import java.util.List;
 
 import dao.ClienteDao;
 import dao.DaoFactory;
-import impl.EM;
+import dao.Transaction;
 import dominio.Cliente;
 
 public class ClienteServico {
@@ -16,15 +16,31 @@ public class ClienteServico {
 	}
 	
 	public void inserirAtualizar(Cliente x) {
-		EM.getLocalEm().getTransaction().begin();
+		try {
+		Transaction.begin();
 		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
+		Transaction.commit();
+		}
+		catch (RuntimeException e) {
+			if (Transaction.isActive()){
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 	
 	public void excluir(Cliente x) {
-		EM.getLocalEm().getTransaction().begin();
+		try {
+		Transaction.begin();
 		dao.excluir(x);
-		EM.getLocalEm().getTransaction().commit();
+		Transaction.commit();
+		}
+		catch (RuntimeException e) {
+			if (Transaction.isActive()){
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 	
 	public Cliente buscar(int cod) {

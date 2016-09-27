@@ -2,9 +2,9 @@ package servico;
 
 import java.util.List;
 
-import dao.ProdutoDao;
 import dao.DaoFactory;
-import impl.EM;
+import dao.ProdutoDao;
+import dao.Transaction;
 import dominio.Produto;
 
 public class ProdutoServico {
@@ -16,16 +16,32 @@ public class ProdutoServico {
 	}
 	
 	public void inserirAtualizar(Produto x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
-	}
+		try {
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+			}
+			catch (RuntimeException e) {
+				if (Transaction.isActive()){
+					Transaction.rollback();
+				}
+				System.out.println("Erro: " + e.getMessage());
+			}
+		}
 	
 	public void excluir(Produto x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.excluir(x);
-		EM.getLocalEm().getTransaction().commit();
-	}
+		try {
+			Transaction.begin();
+			dao.excluir(x);
+			Transaction.commit();
+			}
+			catch (RuntimeException e) {
+				if (Transaction.isActive()){
+					Transaction.rollback();
+				}
+				System.out.println("Erro: " + e.getMessage());
+			}
+		}
 	
 	public Produto buscar(int cod) {
 		return dao.buscar(cod);

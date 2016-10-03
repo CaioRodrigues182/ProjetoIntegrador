@@ -50,4 +50,8 @@ public class FornecedorServico {
 	public List<Fornecedor> buscarTodos() {
 		return dao.buscarTodos();
 	}
+	
+	public List<Fornecedor> buscarFornecedor(String nome){
+		return dao.buscarFornecedor(nome);
+	}
 }

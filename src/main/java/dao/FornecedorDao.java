@@ -10,4 +10,5 @@ public interface FornecedorDao {
 	public void excluir(Fornecedor x);
 	public Fornecedor buscar(int cod);
 	public List<Fornecedor> buscarTodos();
+	public List<Fornecedor> buscarFornecedor(String nome);
 } 

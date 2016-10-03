@@ -47,6 +47,12 @@ public class ClienteServico {
 		return dao.buscar(cod);
 	}
 	
+	public void buscarDadosCliente(int cod) {
+		Cliente cliente = dao.buscar(cod);
+		System.out.println(cliente);
+	}
+	
+	
 	public List<Cliente> buscarTodos() {
 		return dao.buscarTodos();
 	}

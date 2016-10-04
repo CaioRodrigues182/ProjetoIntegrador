@@ -6,6 +6,7 @@ import dao.ClienteDao;
 import dao.DaoFactory;
 import dao.Transaction;
 import dominio.Cliente;
+import dominio.Fornecedor;
 
 public class ClienteServico {
 
@@ -15,12 +16,16 @@ public class ClienteServico {
 		dao = DaoFactory.criarClienteDao();
 	}
 	
-	public void inserirAtualizar(Cliente x) {
+	public void inserirAtualizar(Cliente x) throws ServicoException {
 		try {
-		Transaction.begin();
-		dao.inserirAtualizar(x);
-		Transaction.commit();
-		}
+			Cliente aux = dao.existeCliente(x.getCpf()); 
+			if(aux == null){
+				throw new ServicoException("CPF já existe", 0);
+			}
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+		}	
 		catch (RuntimeException e) {
 			if (Transaction.isActive()){
 				Transaction.rollback();

@@ -10,4 +10,5 @@ public interface ClienteDao {
 	public void excluir(Cliente x);
 	public Cliente buscar(int cod);
 	public List<Cliente> buscarTodos();
+	public Cliente existeCliente(String cpf);
 } 

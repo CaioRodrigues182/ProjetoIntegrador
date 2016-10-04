@@ -42,4 +42,14 @@ public class ClienteDaoImpl implements ClienteDao {
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Cliente existeCliente(String cpf) {
+		String jpql = "SELECT x FROM Cliente x WHERE cpf LIKE ':cpf'";
+		Query query = em.createQuery(jpql);
+		query.setParameter("cpf", cpf);
+		List<Cliente> aux = query.getResultList();
+		return aux.size()>0 ? aux.get(0):null;
+	}
 }

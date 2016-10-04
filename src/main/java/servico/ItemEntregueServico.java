@@ -15,8 +15,15 @@ public class ItemEntregueServico {
 		dao = DaoFactory.criarItemEntregueDao();
 	}
 	
-	public void inserirAtualizar(ItemEntregue x) {
+	public void inserirAtualizar(ItemEntregue x) throws ServicoException {
 		try {
+			
+			ItemEntregue aux = dao.buscaItensEntrega(x.getProduto(), x.getEntrega());
+			if(aux != null){
+				throw new ServicoException("O item já está na lista.", 22);
+			}
+			
+			
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();

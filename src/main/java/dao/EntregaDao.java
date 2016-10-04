@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import dominio.Entrega;
+import dominio.Produto;
 
 public interface EntregaDao {
 
@@ -10,4 +11,5 @@ public interface EntregaDao {
 	public void excluir(Entrega x);
 	public Entrega buscar(int cod);
 	public List<Entrega> buscarTodos();
+	public List<Entrega> buscarEntregaCliente(int codCliente);
 } 

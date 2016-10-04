@@ -6,7 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import dao.ItemEntregueDao;
+import dominio.Entrega;
 import dominio.ItemEntregue;
+import dominio.Produto;
 
 public class ItemEntregueDaoImpl implements ItemEntregueDao {
 
@@ -41,5 +43,16 @@ public class ItemEntregueDaoImpl implements ItemEntregueDao {
 		String jpql = "SELECT x FROM ItemEntregue x";
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public ItemEntregue buscaItensEntrega(Produto p, Entrega e) {
+		String jpql = "SELECT item FROM ItemEntregue item WHERE produto  = :c1 and entrega = :c2";
+		Query query = em.createQuery(jpql);
+		query.setParameter("c1", p.getCodProduto());
+		query.setParameter("c2", e.getCodEntrega());
+		List<ItemEntregue> aux = query.getResultList();
+		return (aux.size() > 0) ? aux.get(0): null;
 	}
 }

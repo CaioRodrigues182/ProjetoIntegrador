@@ -48,7 +48,7 @@ public class ItemEntregueDaoImpl implements ItemEntregueDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public ItemEntregue buscaItensEntrega(Produto p, Entrega e) {
-		String jpql = "SELECT * FROM tb_itens WHERE produto  = :c1 and entrega = :c2";
+		String jpql = "SELECT item FROM ItemEntregue item WHERE produto  = :c1 and entrega = :c2";
 		Query query = em.createQuery(jpql);
 		query.setParameter("c1", p.getCodProduto());
 		query.setParameter("c2", e.getCodEntrega());

@@ -50,4 +50,9 @@ public class EntregaServico {
 	public List<Entrega> buscarTodos() {
 		return dao.buscarTodos();
 	}
+	
+	public List<Entrega> buscarEntregaCliente(int codCliente) {
+		return dao.buscarEntregaCliente(codCliente);
+	}
+	
 }

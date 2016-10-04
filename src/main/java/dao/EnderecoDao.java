@@ -4,6 +4,8 @@ import java.util.List;
 
 import dominio.Cliente;
 import dominio.Endereco;
+import dominio.Entrega;
+import dominio.Produto;
 
 public interface EnderecoDao {
 

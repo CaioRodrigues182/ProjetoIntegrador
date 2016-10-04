@@ -26,6 +26,7 @@ import servico.EntregaServico;
 import servico.FornecedorServico;
 import servico.ItemEntregueServico;
 import servico.ProdutoServico;
+import servico.ServicoException;
 
 @WebServlet("/Instanciacao")
 public class Instanciacao extends HttpServlet {
@@ -141,6 +142,9 @@ public class Instanciacao extends HttpServlet {
 	}
 		catch (ParseException e) {
 			response.getWriter().append("Erro ao instanciar data");
+		}
+		catch (ServicoException e){
+			response.getWriter().append("Erro! " + e.getMessage());
 		}
 	
 	}

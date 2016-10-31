@@ -47,8 +47,8 @@
 						<td>${x.complemento}</td>
 						<td>${x.bairro}</td>
 						<td>${x.cep}</td>
-						<td><a href="<%=request.getContextPath()%>endereco/editar" class="btn btn-primary btn-xs">Editar</a>
-						<a href="<%=request.getContextPath()%>/endereco/excluir" class="btn btn-danger btn-xs">Excluir</a></td>
+						<td><a href="<%=request.getContextPath()%>enderecos/editar?cod=${x.codEndereco}" class="btn btn-primary btn-xs">Editar</a>
+						<a href="<%=request.getContextPath()%>/enderecos/remover?cod=${x.codEndereco}" class="btn btn-danger btn-xs">Excluir</a></td>
 					</tr>
 
 				</c:forEach>

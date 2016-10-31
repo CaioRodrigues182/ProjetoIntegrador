@@ -1,5 +1,6 @@
 package servico;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import dao.DaoFactory;
@@ -14,6 +15,34 @@ public class EnderecoServico {
 	public EnderecoServico() {
 		dao = DaoFactory.criarEnderecoDao();
 	}
+	
+	
+	public void validar (Endereco x) throws ValidacaoException {
+		List<String> erros = new LinkedList<>();
+		
+		if(x.getLogadouro()==null) {
+			erros.add("Favor preencher o logadouro!");
+		}
+		
+		if(x.getNumero()==null) {
+			erros.add("Favor preencher o numero!");
+		}
+		
+		if(x.getComplemento()==null) {
+			erros.add("Favor preencher o complemento!");
+		}
+		
+		if(x.getBairro()==null) {
+			erros.add("Favor preencher o bairro!");
+		}
+		
+		if(x.getCep()==null) {
+			erros.add("Favor preencher o CEP!");
+		}
+	}
+	
+	
+	
 	
 	public void inserirAtualizar(Endereco x) {
 		try {

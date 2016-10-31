@@ -1,5 +1,4 @@
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -23,21 +22,10 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Inserir Novo Endereço</h1>
+			<h1>Editar Endereço</h1>
 		</div>
 
 		<form name="myform" class="form-horizontal" action="">
-
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<ul>
-						<c:forEach items="${erros}" var="msg">
-							<li>${msg}</li>
-						</c:forEach>
-					</ul>
-				</div>
-			</div>
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="logadouro">Logadouro:</label>
@@ -79,17 +67,15 @@
 						required="required" class="form-control" />
 				</div>
 			</div>
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<form class="navbar-form"
-						action="<%=request.getContextPath()%>/enderecos/inserir?cod=${x.codCliente}">
-						<button type="submit" class="btn btn-primary">Inserir</button>
-					</form>
-					<a href="<%=request.getContextPath()%>/manter/enderecos"
-						class="btn btn-default">Voltar</a>
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<form class="navbar-form" action="<%=request.getContextPath()%>/enderecos/atualizar">
+						<button type="submit" class="btn btn-primary" >Atualizar</button>
+						</form>
+						<a href="<%=request.getContextPath()%>/manter/enderecos" class="btn btn-default">Voltar</a>
+					</div>
 				</div>
-			</div>
 
 		</form>
 

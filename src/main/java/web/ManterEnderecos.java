@@ -26,7 +26,7 @@ public class ManterEnderecos extends HttpServlet {
     	request.setAttribute("clientes", clientes);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
-   	 response.getWriter().append("Served at: ").append(request.getContextPath());
+   	 
     }
 
 }

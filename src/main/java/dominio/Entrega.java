@@ -30,7 +30,7 @@ public class Entrega implements Serializable {
 		private List<ItemEntregue> itens;
 	
 	@ManyToOne
-	@JoinColumn(name="entrega")
+	@JoinColumn(name="endereco")
 	private Endereco endereco;
 	
 	public Entrega () {

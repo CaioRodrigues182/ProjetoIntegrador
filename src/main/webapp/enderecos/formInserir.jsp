@@ -26,8 +26,11 @@
 			<h1>Inserir Novo Endereço</h1>
 		</div>
 
-		<form name="myform" class="form-horizontal" action="">
+		<form method="post" name="myform" class="form-horizontal"
+			action="<%=request.getContextPath()%>/enderecos/inserir">
 
+
+		<input type="hidden" value ="${item.cliente.codCliente}" name="codCliente"/> 
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
@@ -40,40 +43,15 @@
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="logadouro">Logadouro:</label>
-				<div class="col-sm-5">
-					<input type="text" name="logadouro" id="logadouro"
-						value="${item.logadouro}" required="required" class="form-control" />
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="numero">Numero:</label>
-				<div class="col-sm-5">
-					<input type="text" name="numero" id="numero" value="${item.numero}"
-						required="required" class="form-control" />
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="complemento">Complemento:</label>
-				<div class="col-sm-5">
-					<input type="text" name="complemento" id="complemento"
-						value="${item.complemento}" required="required"
-						class="form-control" />
-				</div>
-			</div>
-
-			<div class="form-group">
 				<label class="col-sm-2 control-label" for="bairro">Bairro:</label>
 				<div class="col-sm-5">
 					<input type="text" name="bairro" id="bairro" value="${item.bairro}"
-						required="required" class="form-control" />
+					required="required" class="form-control" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="cep">Cep:</label>
+				<label class="col-sm-2 control-label" for="cep">CEP:</label>
 				<div class="col-sm-5">
 					<input type="text" name="cep" id="cep" value="${item.cep}"
 						required="required" class="form-control" />
@@ -81,11 +59,33 @@
 			</div>
 
 			<div class="form-group">
+				<label class="col-sm-2 control-label" for="complemento">Complemento:</label>
+				<div class="col-sm-5">
+					<input type="text" name="complemento" id="complemento" 
+						value="${item.complemento}" required="required"
+						class="form-control" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="logadouro">Logadouro:</label>
+				<div class="col-sm-5">
+					<input type="text" name="logadouro" id="logadouro" value="${item.logadouro}"
+						required="required" class="form-control" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="numero">Numero:</label>
+				<div class="col-sm-5">
+					<input type="text" name="cep" id="numero" value="${item.numero}"
+						required="required" class="form-control" />
+				</div>
+			</div>
+
+			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<form class="navbar-form"
-						action="<%=request.getContextPath()%>/enderecos/inserir?cod=${x.codCliente}">
-						<button type="submit" class="btn btn-primary">Inserir</button>
-					</form>
+					<button type="submit" class="btn btn-primary">Inserir</button>
 					<a href="<%=request.getContextPath()%>/manter/enderecos"
 						class="btn btn-default">Voltar</a>
 				</div>

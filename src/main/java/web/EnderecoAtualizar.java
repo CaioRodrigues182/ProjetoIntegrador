@@ -28,7 +28,7 @@ public class EnderecoAtualizar extends HttpServlet {
     	request.setAttribute("itens", itens);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
-   	 response.getWriter().append("Served at: ").append(request.getContextPath());
+   	 
     }
 
 }

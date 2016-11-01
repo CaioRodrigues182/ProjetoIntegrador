@@ -24,25 +24,31 @@
 		<div class="page-header">
 			<h1>Confirmar Exclusão</h1>
 
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<form class="navbar-form"
-						action="<%=request.getContextPath()%>/enderecos/excluir?cod=${x.codEndereco}">
-						<button type="submit" class="btn btn-danger">Excluir</button>
-					</form>
-					<a href="<%=request.getContextPath()%>/manter/enderecos"
-						class="btn btn-default">Voltar</a>
-				</div>
+			<ul class="list-group">
+				<li class="list-group-item">Código: ${item.codEndereco}</li>
+				<li class="list-group-item">Logadouro: ${item.logadouro}</li>
+				<li class="list-group-item">Numero: ${item.numero}</li>
+				<li class="list-group-item">Complemento: ${item.complemento}</li>
+				<li class="list-group-item">Bairro: ${item.bairro}</li>
+				<li class="list-group-item">CEP: ${item.cep}</li>
+			</ul>
+
+			<div>
+				<a
+					href="<%=request.getContextPath()%>/enderecos/excluir?codEndereco=${item.codEndereco}"
+					class="btn btn-danger">Excluir</a> <a
+					href="<%=request.getContextPath()%>/manter/enderecos"
+					class="btn btn-default">Voltar</a>
 			</div>
 
 		</div>
-		</div>
+	</div>
 
-		<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
+	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
 
-		<!-- Core JS -->
-		<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
-		<script
-			src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+	<!-- Core JS -->
+	<script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

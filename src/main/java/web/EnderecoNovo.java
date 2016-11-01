@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dominio.Cliente;
 import dominio.Endereco;
+import servico.ClienteServico;
 
 @WebServlet("/enderecos/novo")
 public class EnderecoNovo extends HttpServlet {
@@ -16,13 +18,17 @@ public class EnderecoNovo extends HttpServlet {
 
 	private static String DESTINO = "/enderecos/formInserir.jsp";
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		request.setAttribute("endereco", new Endereco());
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		ClienteServico cs = new ClienteServico();
+		int cod = Integer.parseInt(request.getParameter("codCliente"));
+		Endereco x = new Endereco();
+		Cliente c = cs.buscar(cod);
+		x.setCliente(c);
+		request.setAttribute("item", new Endereco());
 		request.getRequestDispatcher(DESTINO).forward(request, response);
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 }

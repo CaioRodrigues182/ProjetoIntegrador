@@ -27,7 +27,7 @@ public class EnderecoEditar extends HttpServlet {
     	request.setAttribute("item", end);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
-   	 response.getWriter().append("Served at: ").append(request.getContextPath());
+   	 
     }
 
 }

@@ -21,7 +21,8 @@
       </div>
 		<div class="row">
 			<div class="col-sm-2">
-				<form class="navbar-form" action="<%=request.getContextPath()%>/enderecos/novo">
+				<form method="post" class="navbar-form" action="<%=request.getContextPath()%>/enderecos/novo">
+				<input type="hidden" name="codCliente" value="${cliente.codCliente}"/>
 				<button type="submit" class="btn btn-primary" >Inserir Novo</button>
 				</form>
 			</div>
@@ -47,8 +48,8 @@
 						<td>${x.complemento}</td>
 						<td>${x.bairro}</td>
 						<td>${x.cep}</td>
-						<td><a href="<%=request.getContextPath()%>enderecos/editar?cod=${x.codEndereco}" class="btn btn-primary btn-xs">Editar</a>
-						<a href="<%=request.getContextPath()%>/enderecos/remover?cod=${x.codEndereco}" class="btn btn-danger btn-xs">Excluir</a></td>
+						<td><a href="<%=request.getContextPath()%>/enderecos/editar?codEndereco=${x.codEndereco}" class="btn btn-primary btn-xs">Editar</a>
+						<a href="<%=request.getContextPath()%>/enderecos/remover?codEndereco=${x.codEndereco}" class="btn btn-danger btn-xs">Excluir</a></td>
 					</tr>
 
 				</c:forEach>

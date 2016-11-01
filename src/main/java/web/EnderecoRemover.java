@@ -21,12 +21,11 @@ public class EnderecoRemover extends HttpServlet {
     	
     	EnderecoServico es = new EnderecoServico();
     	int cod = Integer.parseInt(request.getParameter("codEndereco"));
-    	Endereco end = new Endereco ();
-    	es.buscar(cod);
+    	Endereco end = es.buscar(cod);
     	request.setAttribute("item", end);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
-   	 response.getWriter().append("Served at: ").append(request.getContextPath());
+   	 
     }
 
 }

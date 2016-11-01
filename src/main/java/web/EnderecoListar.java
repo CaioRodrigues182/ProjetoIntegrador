@@ -26,7 +26,7 @@ public class EnderecoListar extends HttpServlet {
     	request.setAttribute("cliente", x);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
-   	 response.getWriter().append("Served at: ").append(request.getContextPath());
+   	 
     }
 
 }

@@ -42,4 +42,15 @@ public class EntregaDaoImpl implements EntregaDao {
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Entrega> buscarEntregaCliente(int codCliente) {
+		String jpql = "SELECT x FROM tb_entrega x WHERE x.codCliente = :c1";
+		Query query = em.createQuery(jpql);
+		query.setParameter("c1", codCliente);
+		return query.getResultList();
+	}
+	
+	
 }

@@ -50,4 +50,9 @@ public class ClienteServico {
 	public List<Cliente> buscarTodos() {
 		return dao.buscarTodos();
 	}
+	
+	public Cliente existeCliente(String cpf) {
+		return dao.existeCliente(cpf);
+		
+	}
 }

@@ -1,5 +1,6 @@
 package servico;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import dao.DaoFactory;
@@ -49,5 +50,9 @@ public class ProdutoServico {
 	
 	public List<Produto> buscarTodos() {
 		return dao.buscarTodos();
+	}
+	
+	public List<Produto> buscaNomePreco(String nome, BigDecimal valorMin, BigDecimal valorMax){
+		return dao.buscaNomePreco(nome, valorMin, valorMax);
 	}
 }

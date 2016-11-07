@@ -34,6 +34,25 @@ public class FornecedorDaoImpl implements FornecedorDao {
 	public Fornecedor buscar(int cod) {
 		return em.find(Fornecedor.class, cod);
 	}
+	
+	//Busca por pedaço do nome
+	@Override
+	public List<Fornecedor> buscarFornecedor(String nome) {
+		String jpql = "SELECT x FROM Fornecedor x WHERE x.nome LIKE '%:f%'";
+		Query query = em.createQuery(jpql);
+		query.setParameter("f", nome);
+		return query.getResultList();
+	}
+	//Busca por CNPJ 
+	public Fornecedor existeFornecedor(String cnpj) {
+		String jpql = "SELECT x FROM Fornecedor x WHERE x.cnpj LIKE ':f'";
+		Query query = em.createQuery(jpql);
+		query.setParameter("f", cnpj);
+		List<Fornecedor> aux = query.getResultList();
+		return aux.size() > 0 ? aux.get(0):null;
+		
+	}
+
 
 	@SuppressWarnings("unchecked")
 	@Override

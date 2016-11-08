@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dominio.Cliente;
 import dominio.Endereco;
-import servico.ClienteServico;
 import servico.EnderecoServico;
 import servico.ValidacaoException;
 
@@ -25,14 +23,12 @@ public class EnderecoInserir extends HttpServlet {
   	 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	System.out.println("passou 1");
-    	
+    	Endereco x = null;
     	EnderecoServico es = new EnderecoServico();
-    	Endereco x = Instanciar.endereco(request);
-    	ClienteServico cs = new ClienteServico();
-       	int cod = Integer.parseInt(request.getParameter("codCliente"));
-       	Cliente y = cs.buscar(cod);
+    	int y = Integer.parseInt(request.getParameter("codCliente"));
+    	
     	try {
+    		x = Instanciar.endereco(request);
 			es.validar(x);
 			es.inserirAtualizar(x);
 	    	List<Endereco> itens = es.buscarTodos();

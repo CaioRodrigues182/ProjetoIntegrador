@@ -25,7 +25,9 @@
 			<h1>Editar Endereço</h1>
 		</div>
 
-		<form name="myform" class="form-horizontal" action="">
+		<form name="myform" class="form-horizontal" action="<%=request.getContextPath()%>/enderecos/atualizar">
+		
+		<input type="hidden" value ="${item.cliente.codCliente}" name="codCliente"/>
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="logadouro">Logadouro:</label>
@@ -70,9 +72,7 @@
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<form class="navbar-form" action="<%=request.getContextPath()%>/enderecos/atualizar">
-						<button type="submit" class="btn btn-primary" >Atualizar</button>
-						</form>
+						<a href="<%=request.getContextPath()%>/manter/enderecos" class ="btn btn-default">Atualizar</a>
 						<a href="<%=request.getContextPath()%>/manter/enderecos" class="btn btn-default">Voltar</a>
 					</div>
 				</div>

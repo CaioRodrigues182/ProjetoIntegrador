@@ -9,4 +9,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ItemInserir</display-name>
+    <servlet-name>ItemInserir</servlet-name>
+    <servlet-class>web.ItemInserir</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemInserir</servlet-name>
+    <url-pattern>/ItemInserir</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ItemListarEntregas</display-name>
+    <servlet-name>ItemListarEntregas</servlet-name>
+    <servlet-class>web.ItemListarEntregas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemListarEntregas</servlet-name>
+    <url-pattern>/ItemListarEntregas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ItemListarProdutos</display-name>
+    <servlet-name>ItemListarProdutos</servlet-name>
+    <servlet-class>web.ItemListarProdutos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemListarProdutos</servlet-name>
+    <url-pattern>/ItemListarProdutos</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -18,7 +18,7 @@
 						de Clientes</a></li>
 				<li><a href="<%=request.getContextPath()%>/filme/pesquisar">Pesquisar
 						Clientes</a></li>
-				<li><a href="<%=request.getContextPath()%>/participacao/filmes">Inserir
+				<li><a href="<%=request.getContextPath()%>/clientes/listar">Inserir Itens na
 						Entregas</a></li>
 			</ul>
 		</div>

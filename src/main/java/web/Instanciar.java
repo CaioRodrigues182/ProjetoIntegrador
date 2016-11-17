@@ -1,8 +1,13 @@
 package web;
 
-import javax.servlet.http.HttpServletRequest;
-
 import dominio.Endereco;
+import dominio.Fornecedor;
+import dominio.Produto;
+import servico.FornecedorServico;
+import java.math.BigDecimal;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.transaction.SystemException;
 
 public class Instanciar {
 
@@ -36,5 +41,37 @@ public class Instanciar {
 		}
 		return aux;
 		
+	}
+
+	public static Produto produto (HttpServletRequest request){
+
+		FornecedorServico fs = new FornecedorServico();
+
+
+		Produto aux = new Produto();
+		String s;
+
+		s = request.getParameter("nome");
+		if(s!=null && !s.isEmpty()) {
+			aux.setNome(s);
+		}
+
+		s = request.getParameter("preco");
+		if(s!=null && !s.isEmpty()) {
+			aux.setPreco(new BigDecimal(s));
+		}
+
+		s = request.getParameter("fornecedor.codFornecedor");
+		if(s!=null && !s.isEmpty()) {
+			try {
+				Fornecedor x = fs.buscar(Integer.parseInt(s));
+				aux.setFornecedor(x);
+			} catch (NumberFormatException e) {
+				System.out.println("Instanciacao: codFornecedor inválido");
+			}
+
+		}
+
+		return aux;
 	}
 }

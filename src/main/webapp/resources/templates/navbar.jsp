@@ -16,10 +16,17 @@
 			<ul class="nav navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/manter/enderecos">Endereços
 						de Clientes</a></li>
+<<<<<<< HEAD
 				<li><a href="<%=request.getContextPath()%>/clientes/listar">Inserir Itens na
 					Entregas</a></li>
 				<li><a href="<%=request.getContextPath()%>/produtos/manter">Produtos
 				</a></li>
+=======
+				<li><a href="<%=request.getContextPath()%>/filme/pesquisar">Pesquisar
+						Clientes</a></li>
+				<li><a href="<%=request.getContextPath()%>/clientes/listar">Inserir Itens na
+						Entregas</a></li>
+>>>>>>> f4da4962ec24d0da7074f7aba6528f92f2814b42
 			</ul>
 		</div>
 		<!--/.nav-collapse -->

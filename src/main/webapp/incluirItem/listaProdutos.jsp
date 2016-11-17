@@ -5,11 +5,7 @@
 <html>
   <head>
     <meta charset="ISO-8859-1">
-<<<<<<< HEAD
-    <title>Sistema de Entregas</title>
-=======
     <title>Sistema de Filmes</title>
->>>>>>> f4da4962ec24d0da7074f7aba6528f92f2814b42
     <link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
   </head>
@@ -21,7 +17,7 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>Lista de Entregas</h1>
+        <h1>Lista de Produtos</h1>
       </div>
 		<div class="row">
 		</div>
@@ -30,18 +26,17 @@
 			<thead>
 				<tr>
 					<th>Codigo</th>
-					<th>Data</th>
-					<th>Valor Total</th>
+					<th>Nome</th>
+					<th>Preço</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<c:forEach items="${entregas}" var="x">
+				<c:forEach items="${produto}" var="x">
 					<tr>
-						<td>${x.codEntrega}</td>
-						<td><fmt:formatDate type="date" pattern="dd/MM/yyyy" value="${x.data}"/></td>
-						<td>${x.valorTotal}</td>
-						<td><a href="<%=request.getContextPath()%>/produtos/listar?codEntrega=${x.codEntrega}" class="btn btn-primary btn-xs">Selecionar</a></td>
+						<td>${x.codProduto}</td>
+						<td>${x.nome}</td>
+						<td>${x.preco}</td>
 					</tr>
 
 				</c:forEach>

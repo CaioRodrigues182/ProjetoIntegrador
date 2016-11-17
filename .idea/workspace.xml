@@ -85,7 +85,7 @@
       <file leaf-file-name="ProdutoAtualizar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/ProdutoAtualizar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5833333">
+            <state vertical-scroll-proportion="2.75">
               <caret line="33" column="32" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -908,12 +908,12 @@
       <option name="number" value="Default" />
       <updated>1479306262223</updated>
       <workItem from="1479306272904" duration="15655000" />
-      <workItem from="1479334854965" duration="6491000" />
+      <workItem from="1479334854965" duration="6873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22146000" />
+    <option name="totallyTimeSpent" value="22528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1284,7 +1284,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/ProdutoAtualizar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5833333">
+        <state vertical-scroll-proportion="2.75">
           <caret line="33" column="32" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />

@@ -15,6 +15,7 @@ public class ItemEntregueServico {
 		dao = DaoFactory.criarItemEntregueDao();
 	}
 	
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 	public void inserirAtualizar(ItemEntregue x) throws ServicoException {
 		try {
 			
@@ -24,6 +25,10 @@ public class ItemEntregueServico {
 			}
 			
 			
+=======
+	public void inserirAtualizar(ItemEntregue x) {
+		try {
+>>>>>>> Endereco funfando
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();

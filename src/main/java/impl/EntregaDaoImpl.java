@@ -46,11 +46,19 @@ public class EntregaDaoImpl implements EntregaDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Entrega> buscarEntregaCliente(int codCliente) {
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 		String jpql = "SELECT ent FROM tb_entrega ent INNER JOIN tb_endereco end ON ent.entrega = end.codEndereco INNER JOIN tb_cliente c ON end.cliente = c.codCliente WHERE c.codCliente = :c1";
+=======
+		String jpql = "SELECT x FROM tb_entrega x WHERE x.codCliente = :c1";
+>>>>>>> Endereco funfando
 		Query query = em.createQuery(jpql);
 		query.setParameter("c1", codCliente);
 		return query.getResultList();
 	}
 	
 	
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 }
+=======
+}
+>>>>>>> Endereco funfando

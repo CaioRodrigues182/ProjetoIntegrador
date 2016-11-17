@@ -6,7 +6,10 @@ import dao.ClienteDao;
 import dao.DaoFactory;
 import dao.Transaction;
 import dominio.Cliente;
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 import dominio.Fornecedor;
+=======
+>>>>>>> Endereco funfando
 
 public class ClienteServico {
 
@@ -16,6 +19,7 @@ public class ClienteServico {
 		dao = DaoFactory.criarClienteDao();
 	}
 	
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 	public void inserirAtualizar(Cliente x) throws ServicoException {
 		try {
 			Cliente aux = dao.existeCliente(x.getCpf()); 
@@ -26,6 +30,14 @@ public class ClienteServico {
 			dao.inserirAtualizar(x);
 			Transaction.commit();
 		}	
+=======
+	public void inserirAtualizar(Cliente x) {
+		try {
+		Transaction.begin();
+		dao.inserirAtualizar(x);
+		Transaction.commit();
+		}
+>>>>>>> Endereco funfando
 		catch (RuntimeException e) {
 			if (Transaction.isActive()){
 				Transaction.rollback();
@@ -52,6 +64,7 @@ public class ClienteServico {
 		return dao.buscar(cod);
 	}
 	
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 	public void buscarDadosCliente(int cod) {
 		Cliente cliente = dao.buscar(cod);
 		System.out.println(cliente);
@@ -61,4 +74,14 @@ public class ClienteServico {
 	public List<Cliente> buscarTodos() {
 		return dao.buscarTodos();
 	}
+=======
+	public List<Cliente> buscarTodos() {
+		return dao.buscarTodos();
+	}
+	
+	public Cliente existeCliente(String cpf) {
+		return dao.existeCliente(cpf);
+		
+	}
+>>>>>>> Endereco funfando
 }

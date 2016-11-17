@@ -61,4 +61,8 @@ public class FornecedorDaoImpl implements FornecedorDao {
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 }
+=======
+}
+>>>>>>> Endereco funfando

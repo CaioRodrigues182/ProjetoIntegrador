@@ -55,4 +55,9 @@ public class ItemEntregueDaoImpl implements ItemEntregueDao {
 		List<ItemEntregue> aux = query.getResultList();
 		return (aux.size() > 0) ? aux.get(0): null;
 	}
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 }
+=======
+	 
+}
+>>>>>>> Endereco funfando

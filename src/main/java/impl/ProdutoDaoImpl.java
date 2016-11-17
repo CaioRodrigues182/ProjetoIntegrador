@@ -44,6 +44,15 @@ public class ProdutoDaoImpl implements ProdutoDao {
 		return query.getResultList();
 	}
 	
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
+=======
+	public List<Produto> buscarTodosOrdenadoNome() {
+		String jpql = "SELECT x FROM Produto x ORDER BY x.nome ASC";
+		Query query = em.createQuery(jpql);
+		return query.getResultList();
+	}
+	
+>>>>>>> Endereco funfando
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Produto> buscaNomePreco(String nome, BigDecimal valorMin, BigDecimal valorMax){

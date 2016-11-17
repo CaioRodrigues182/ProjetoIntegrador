@@ -72,8 +72,11 @@ public class Instanciacao extends HttpServlet {
 		Entrega en4 = new Entrega(null, sdf.parse("27/08/2016"), e6);
 		Entrega en5 = new Entrega(null, sdf.parse("30/08/2016"), e3);
 		
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 	
 		
+=======
+>>>>>>> Endereco funfando
 		ItemEntregue i1 = new ItemEntregue(null, 2, p1, en1);
 		ItemEntregue i2 = new ItemEntregue(null, 4, p2, en1);
 
@@ -89,11 +92,14 @@ public class Instanciacao extends HttpServlet {
 		ItemEntregue i9 = new ItemEntregue(null, 4, p3, en5);
 		ItemEntregue i10 = new ItemEntregue(null, 9, p5, en5);
 		
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 		Entrega en6 = new Entrega(null, sdf.parse("03/10/2016"), e3);
 		ItemEntregue i1En6 = new ItemEntregue(null, 2, p1, en6);
 		ItemEntregue i2En6 = new ItemEntregue(null, 4, p1, en6);
 		
 		
+=======
+>>>>>>> Endereco funfando
 		ClienteServico cs = new ClienteServico();
 		EnderecoServico es = new EnderecoServico();
 		FornecedorServico fs = new FornecedorServico();
@@ -131,8 +137,11 @@ public class Instanciacao extends HttpServlet {
 		ens.inserirAtualizar(en4);
 		ens.inserirAtualizar(en5);
 		
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 		
 		
+=======
+>>>>>>> Endereco funfando
 		ies.inserirAtualizar(i1);
 		ies.inserirAtualizar(i2);
 		ies.inserirAtualizar(i3);
@@ -152,11 +161,19 @@ public class Instanciacao extends HttpServlet {
 		catch (ParseException e) {
 			response.getWriter().append("Erro ao instanciar data");
 		}
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 
 		catch (ServicoException e) {
 			response.getWriter().append("Erro ao atualizar fornecedor: "+e.getMessage());
 
 		
 		}
+=======
+		
+		catch (ServicoException e) {
+			response.getWriter().append("Erro no serviço.");
+		}
+	
+>>>>>>> Endereco funfando
 	}
 }

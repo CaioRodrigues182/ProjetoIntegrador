@@ -1,5 +1,9 @@
 package servico;
 
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
+=======
+import java.math.BigDecimal;
+>>>>>>> Endereco funfando
 import java.util.List;
 
 import dao.DaoFactory;
@@ -50,4 +54,11 @@ public class ProdutoServico {
 	public List<Produto> buscarTodos() {
 		return dao.buscarTodos();
 	}
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
+=======
+	
+	public List<Produto> buscaNomePreco(String nome, BigDecimal valorMin, BigDecimal valorMax){
+		return dao.buscaNomePreco(nome, valorMin, valorMax);
+	}
+>>>>>>> Endereco funfando
 }

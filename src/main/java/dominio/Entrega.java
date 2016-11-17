@@ -30,7 +30,11 @@ public class Entrega implements Serializable {
 		private List<ItemEntregue> itens;
 	
 	@ManyToOne
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 	@JoinColumn(name="entrega")
+=======
+	@JoinColumn(name="endereco")
+>>>>>>> Endereco funfando
 	private Endereco endereco;
 	
 	public Entrega () {

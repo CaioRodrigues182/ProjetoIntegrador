@@ -37,7 +37,11 @@ public class FornecedorServico {
 	public void excluir(Fornecedor x) throws ServicoException{
 		try {
 			List<Produto> prod = x.getProdutos(); 
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 			if(prod.size() == 0){
+=======
+			if(prod.size() > 0){
+>>>>>>> Endereco funfando
 				throw new ServicoException("Não é possível excluir pois já existem produtos para esse Fornecedor", 0);
 			}
 			Transaction.begin();
@@ -64,4 +68,8 @@ public class FornecedorServico {
 	public List<Fornecedor> buscarFornecedor(String nome){
 		return dao.buscarFornecedor(nome);
 	}
+<<<<<<< 81bfa358c48e03ecf54c39e1d728781e81aa4b76
 }
+=======
+}
+>>>>>>> Endereco funfando

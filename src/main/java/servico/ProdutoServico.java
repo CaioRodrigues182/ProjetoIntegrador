@@ -2,6 +2,7 @@ package servico;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.LinkedList;
 
 import dao.DaoFactory;
 import dao.ProdutoDao;
@@ -15,8 +16,27 @@ public class ProdutoServico {
 	public ProdutoServico() {
 		dao = DaoFactory.criarProdutoDao();
 	}
-	
-	public void inserirAtualizar(Produto x) {
+
+
+	public void validar (Produto x) throws ValidacaoException {
+		List<String> erros = new LinkedList<>();
+
+		if (x.getNome() == null) {
+			erros.add("Preencha o nome!");
+		}
+
+		if (x.getPreco() == null) {
+			erros.add("Defina um preço!");
+		}
+
+		if (x.getFornecedor() == null) {
+			erros.add("Escolha um fornecedor!");
+
+		}
+
+	}
+
+	public void inserirAtualizar(Produto x) throws ServicoException {
 		try {
 			Transaction.begin();
 			dao.inserirAtualizar(x);

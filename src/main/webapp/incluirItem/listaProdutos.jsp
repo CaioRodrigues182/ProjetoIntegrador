@@ -12,6 +12,7 @@
 
   <body>
 
+<input id="demo1" type="text" value="55" name="demo1">
 	<jsp:include page="/resources/templates/navbar.jsp" />
 
     <!-- Begin page content -->
@@ -24,10 +25,12 @@
 		<table class="table">
 
 			<thead>
+			
 				<tr>
 					<th>Codigo</th>
 					<th>Nome</th>
 					<th>Preço</th>
+					<th>Quantidade</th>
 				</tr>
 			</thead>
 
@@ -37,6 +40,19 @@
 						<td>${x.codProduto}</td>
 						<td>${x.nome}</td>
 						<td>${x.preco}</td>
+						<td><script>
+						   $("input[name='demo1']").TouchSpin({
+				                min: 0,
+				                max: 100,
+				                step: 0.1,
+				                decimals: 2,
+				                boostat: 5,
+				                maxboostedstep: 10,
+				                postfix: '%'
+				            });
+				        </script></td>
+	
+						
 					</tr>
 
 				</c:forEach>

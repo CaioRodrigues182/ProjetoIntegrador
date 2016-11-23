@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dominio.Entrega;
+import servico.EnderecoServico;
 import servico.EntregaServico;
 
 @WebServlet("/entregas/listar")
@@ -20,6 +21,7 @@ public class ItemListarEntregas extends HttpServlet {
   	 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
+    	EnderecoServico eds = new EnderecoServico();
     	EntregaServico es = new EntregaServico();
 		int cod = Integer.parseInt(request.getParameter("codCliente"));
 		Entrega x = es.buscar(cod);

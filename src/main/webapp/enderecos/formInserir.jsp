@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -78,7 +77,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="numero">Numero:</label>
 				<div class="col-sm-5">
-					<input type="text" name="cep" id="numero" value="${item.numero}"
+					<input type="text" name="numero" id="numero" value="${item.numero}"
 						required="required" class="form-control" />
 				</div>
 			</div>

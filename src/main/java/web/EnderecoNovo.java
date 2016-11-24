@@ -25,7 +25,7 @@ public class EnderecoNovo extends HttpServlet {
 		Endereco x = new Endereco();
 		Cliente c = cs.buscar(cod);
 		x.setCliente(c);
-		request.setAttribute("item", new Endereco());
+		request.setAttribute("item", x);
 		request.getRequestDispatcher(DESTINO).forward(request, response);
 
 		

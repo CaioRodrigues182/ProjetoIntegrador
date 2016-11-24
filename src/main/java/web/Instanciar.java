@@ -22,17 +22,17 @@ public class Instanciar {
 		
 		s = request.getParameter("complemento");
 		if(s!=null && !s.isEmpty()) {
-			aux.setLogadouro(s);
+			aux.setComplemento(s);
 		}
 		
 		s = request.getParameter("bairro");
 		if(s!=null && !s.isEmpty()) {
-			aux.setLogadouro(s);
+			aux.setBairro(s);
 		}
 		
 		s = request.getParameter("cep");
 		if(s!=null && !s.isEmpty()) {
-			aux.setLogadouro(s);
+			aux.setCep(s);
 		}
 		return aux;
 		

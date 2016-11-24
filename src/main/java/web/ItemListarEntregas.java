@@ -2,6 +2,8 @@
 package web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dominio.Cliente;
+import dominio.Endereco;
 import dominio.Entrega;
-import servico.EnderecoServico;
-import servico.EntregaServico;
+import servico.ClienteServico;
 
 @WebServlet("/entregas/listar")
 public class ItemListarEntregas extends HttpServlet {
@@ -21,11 +24,16 @@ public class ItemListarEntregas extends HttpServlet {
   	 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	EnderecoServico eds = new EnderecoServico();
-    	EntregaServico es = new EntregaServico();
+    	ClienteServico cs = new ClienteServico();
 		int cod = Integer.parseInt(request.getParameter("codCliente"));
-		Entrega x = es.buscar(cod);
-    	request.setAttribute("entregas", x);
+		Cliente x = cs.buscar(cod);
+		List<Endereco> lista = new ArrayList();
+		for (Endereco end : x.getEnderecos() ) {
+			for (Entrega ent : end.getEntregas()) {
+				lista.add(end);
+			}
+		}
+    	request.setAttribute("entregas", lista);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
    	 

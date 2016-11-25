@@ -119,4 +119,24 @@
     <servlet-name>ProdutoInserir</servlet-name>
     <url-pattern>/ProdutoInserir</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProdutoResultado</display-name>
+    <servlet-name>ProdutoResultado</servlet-name>
+    <servlet-class>web.ProdutoResultado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProdutoResultado</servlet-name>
+    <url-pattern>/ProdutoResultado</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProdutoDetalhe</display-name>
+    <servlet-name>ProdutoDetalhe</servlet-name>
+    <servlet-class>web.ProdutoDetalhe</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProdutoDetalhe</servlet-name>
+    <url-pattern>/ProdutoDetalhe</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -24,16 +24,18 @@ public class ItemListarEntregas extends HttpServlet {
   	 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	ClienteServico cs = new ClienteServico();
-		int cod = Integer.parseInt(request.getParameter("codCliente"));
-		Cliente x = cs.buscar(cod);
-		List<Endereco> lista = new ArrayList();
-		for (Endereco end : x.getEnderecos() ) {
-			for (Entrega ent : end.getEntregas()) {
-				lista.add(end);
-			}
-		}
-    	request.setAttribute("entregas", lista);
+        ClienteServico cs = new ClienteServico();
+        int cod = Integer.parseInt(request.getParameter("codCliente"));
+        Cliente x = cs.buscar(cod);
+        
+        List<Entrega> lista = new ArrayList<Entrega>();
+        for (Endereco end : x.getEnderecos()) {
+         for (Entrega ent : end.getEntregas()) {
+          lista.add(ent);
+         }
+        }
+        
+           request.setAttribute("entregas", lista);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	
    	 

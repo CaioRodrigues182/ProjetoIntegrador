@@ -117,7 +117,7 @@ public class Entrega implements Serializable {
 		return true;
 	}
 	
-	public BigDecimal valorTotalDaEntrega () {
+	public BigDecimal getValorTotalDaEntrega () {
 		BigDecimal total = new BigDecimal ("0.00");
 		for (ItemEntregue i : itens) {
 			total = total.add(i.subTotalDoItem());

@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="ISO-8859-1">
-    <title>Sistema de Filmes</title>
+    <title>Sistema de Entregas</title>
     <link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
   </head>
@@ -36,7 +36,7 @@
 					<tr>
 						<td>${x.codEntrega}</td>
 						<td><fmt:formatDate type="date" pattern="dd/MM/yyyy" value="${x.data}"/></td>
-						<td>${x.valorTotal}</td>
+						<td>${x.valorTotalDaEntrega}</td>
 						<td><a href="<%=request.getContextPath()%>/produtos/listar?codEntrega=${x.codEntrega}" class="btn btn-primary btn-xs">Selecionar</a></td>
 					</tr>
 

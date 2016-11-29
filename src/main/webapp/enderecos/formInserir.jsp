@@ -45,7 +45,7 @@
 				<label class="col-sm-2 control-label" for="bairro">Bairro:</label>
 				<div class="col-sm-5">
 					<input type="text" name="bairro" id="bairro" value="${item.bairro}"
-					required="required" class="form-control" />
+					class="form-control" />
 				</div>
 			</div>
 
@@ -53,7 +53,7 @@
 				<label class="col-sm-2 control-label" for="cep">CEP:</label>
 				<div class="col-sm-5">
 					<input type="text" name="cep" id="cep" value="${item.cep}"
-						required="required" class="form-control" />
+						class="form-control" />
 				</div>
 			</div>
 
@@ -61,7 +61,7 @@
 				<label class="col-sm-2 control-label" for="complemento">Complemento:</label>
 				<div class="col-sm-5">
 					<input type="text" name="complemento" id="complemento" 
-						value="${item.complemento}" required="required"
+						value="${item.complemento}" 
 						class="form-control" />
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 				<label class="col-sm-2 control-label" for="logadouro">Logadouro:</label>
 				<div class="col-sm-5">
 					<input type="text" name="logadouro" id="logadouro" value="${item.logadouro}"
-						required="required" class="form-control" />
+						class="form-control" />
 				</div>
 			</div>
 
@@ -78,7 +78,7 @@
 				<label class="col-sm-2 control-label" for="numero">Numero:</label>
 				<div class="col-sm-5">
 					<input type="text" name="numero" id="numero" value="${item.numero}"
-						required="required" class="form-control" />
+						class="form-control" />
 				</div>
 			</div>
 

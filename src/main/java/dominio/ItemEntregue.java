@@ -105,8 +105,8 @@ public class ItemEntregue implements Serializable {
 		return true;
 	}
 	
-	public BigDecimal subTotalDoItem () {
-		return produto.getPreco();
+	public BigDecimal getSubTotalDoItem () {
+		return produto.getPreco().multiply(new BigDecimal(quantidade));
 	}
 	
 	

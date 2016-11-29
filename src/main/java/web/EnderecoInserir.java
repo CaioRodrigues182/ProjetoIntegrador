@@ -1,7 +1,6 @@
 package web;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dominio.Endereco;
 import servico.EnderecoServico;
+import servico.ServicoException;
 import servico.ValidacaoException;
 
 @WebServlet("/enderecos/inserir")
@@ -19,6 +19,7 @@ public class EnderecoInserir extends HttpServlet {
     
     private static String DESTINO = "/enderecos/listar?codCliente=";
     private static String FORM = "/enderecos/formInserir.jsp";
+	private static String ERRO = "/publico/erro.jsp";
   	 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
@@ -29,15 +30,13 @@ public class EnderecoInserir extends HttpServlet {
     	try {
     		x = Instanciar.endereco(request);
 			es.validar(x);
-			es.inserirAtualizar(x);
-	    	List<Endereco> itens = es.buscarTodos();
-	    	request.setAttribute("itens", itens);
-	    	request.getRequestDispatcher(DESTINO+y).forward(request, response);
+			es.inserir(x);
+	    	response.sendRedirect(request.getContextPath()+DESTINO+y);
 		} catch (ValidacaoException e) {
 			request.setAttribute("erros", e.getErros());
 			request.setAttribute("item", x);
 			request.getRequestDispatcher(FORM).forward(request, response);
-		}
+		} 
    	 
     }
 

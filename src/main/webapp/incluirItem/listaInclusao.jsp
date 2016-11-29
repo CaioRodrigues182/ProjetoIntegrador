@@ -22,36 +22,41 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Detalhes do Item</h1>
+			<h1>Detalhes da Entrega</h1>
 		</div>
 
 		<div>
 			<ul class="list-group">
-				<li class="list-group-item">Código: ${x.codItemEntregue}</li>
-				<li class="list-group-item">Quantidade: ${x.quantidade}</li>
-				<li class="list-group-item">Preço: ${x.preco}</li>
-				<li class="list-group-item">Sub Total do Item: ${x.subTotalDoItem}</li>
+				<li class="list-group-item">Código: ${entrega.codEntrega}</li>
+				<li class="list-group-item">Data: <fmt:formatDate type="date" pattern="dd/MM/yyyy"
+						value="${entrega.data}" /></li>
+				<li class="list-group-item">Valor Atualizado: ${entrega.valorTotalDaEntrega}</li>
 			</ul>
 		</div>
 	</div>
-
+	
 	<div class="container">
 		<div class="page-header">
-			<h2>Detalhes da Entrega</h2>
+				<h2>Itens da Entrega</h2>
 		</div>
 
 		<div>
 			<table class="table">
 			<thead>
 				<tr>
-					<th>Codigo</th>
-					<th>Data</th>
-					<th>Valor Total</th>
+					<th>Nome</th>
+					<th>Preço</th>
+					<th>Quantidade</th>
+					<th>Sub Total do Pedido</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${entrega.itens}" var="x">
 					<tr>
+						<td>${x.produto.nome}</td>
+						<td>${x.produto.preco}</td>
+						<td>${x.quantidade}</td>
+						<td>${x.subTotalDoItem}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

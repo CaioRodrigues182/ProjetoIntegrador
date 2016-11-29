@@ -30,34 +30,10 @@
 				<li class="list-group-item">Código: ${item.codProduto}</li>
 				<li class="list-group-item">Nome: ${item.nome}</li>
 				<li class="list-group-item">Preço: ${item.preco}</li>
+				<li class="list-group-item">Nome do Fornecedor: ${item.fornecedor.nome}</li>
+				<li class="list-group-item">Telefone do Fornecedor: ${item.fornecedor.fone}</li>
+				<li class="list-group-item">Email do Fornecedor: ${item.fornecedor.email}</li>
 			</ul>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="page-header">
-			<h2>Fornecedores</h2>
-		</div>
-
-		<div>
-			<table class="table">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Fone</th>
-					<th>Email</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${items.fornecedor}" var="x">
-					<tr>
-						<td>${x.nome}</td>
-						<td>${x.fone}</td>
-						<td>${x.email}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
 		</div>
 	</div>
 

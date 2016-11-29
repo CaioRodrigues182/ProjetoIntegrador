@@ -27,14 +27,14 @@ public class Entrega implements Serializable {
 	private Date data;
 	
 	@OneToMany(mappedBy="entrega")
-		private List<ItemEntregue> itens;
+	private List<ItemEntregue> itens;
 	
 	@ManyToOne
 	@JoinColumn(name="endereco")
 	private Endereco endereco;
 	
 	public Entrega () {
-		itens = new LinkedList();
+		itens = new LinkedList<ItemEntregue>();
 	}
 
 	public Entrega(Integer codEntrega, Date data, Endereco endereco) {
@@ -43,7 +43,7 @@ public class Entrega implements Serializable {
 		this.data = data;
 		this.endereco = endereco;
 		endereco.addEntrega(this);
-		itens = new LinkedList();
+		itens = new LinkedList<ItemEntregue>();
 	}
 
 	public Integer getCodEntrega() {
@@ -120,7 +120,7 @@ public class Entrega implements Serializable {
 	public BigDecimal getValorTotalDaEntrega () {
 		BigDecimal total = new BigDecimal ("0.00");
 		for (ItemEntregue i : itens) {
-			total = total.add(i.subTotalDoItem());
+			total = total.add(i.getSubTotalDoItem());
 		}
 		return total;
 	}

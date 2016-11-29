@@ -27,10 +27,8 @@ public class ProdutoDetalhe extends HttpServlet {
 		FornecedorServico ps = new FornecedorServico();
 		int cod = Integer.parseInt(request.getParameter("cod"));
 		Produto x = fs.buscar(cod);
-		List<Fornecedor> fornecedores = new ArrayList<>();
 		x.getFornecedor();
 		request.setAttribute("item", x);
-		request.setAttribute("fornecedor", fornecedores);
 		request.getRequestDispatcher(DESTINO).forward(request, response);
 	}
 }

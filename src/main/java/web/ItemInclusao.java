@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dominio.Entrega;
 import dominio.ItemEntregue;
-import dominio.Produto;
 import servico.ItemEntregueServico;
 import servico.ServicoException;
 
@@ -32,9 +31,7 @@ public class ItemInclusao extends HttpServlet {
 			x = Instanciar.item(request);
 			ies.inserirAtualizar(x);
 			Entrega y = x.getEntrega();
-			Produto p = x.getProduto();
 			request.setAttribute("entrega", y);
-			request.setAttribute("produto", p);
 			request.getRequestDispatcher(DESTINO).forward(request, response);
 		} catch (ServicoException e) {
 			request.setAttribute("msg", e.getMessage());

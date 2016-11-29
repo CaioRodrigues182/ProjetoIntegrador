@@ -23,7 +23,7 @@ public class EnderecoAtualizar extends HttpServlet {
     	
     	EnderecoServico es = new EnderecoServico();
     	Endereco x = Instanciar.endereco(request);
-    	es.inserirAtualizar(x);
+    	es.atualizar(x);
     	List<Endereco> itens = es.buscarTodos();
     	request.setAttribute("itens", itens);
     	request.getRequestDispatcher(DESTINO).forward(request, response);

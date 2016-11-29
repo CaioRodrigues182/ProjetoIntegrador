@@ -6,6 +6,7 @@ import java.util.List;
 import dao.DaoFactory;
 import dao.EnderecoDao;
 import dao.Transaction;
+import dominio.Cliente;
 import dominio.Endereco;
 
 public class EnderecoServico {
@@ -39,24 +40,39 @@ public class EnderecoServico {
 		if(x.getCep()==null) {
 			erros.add("Favor preencher o CEP!");
 		}
+		
+		if (!erros.isEmpty()) {
+			throw new ValidacaoException("Erro de validação do endereço", erros);
+		}
 	}
 	
 	
-	
-	
-	public void inserirAtualizar(Endereco x) {
+	public void inserir(Endereco x) {
 		try {
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
+				Transaction.rollback();
 			}
-			catch (RuntimeException e) {
-				if (Transaction.isActive()){
-					Transaction.rollback();
-				}
-				System.out.println("Erro: " + e.getMessage());
-			}
+			System.out.println("Erro: " + e.getMessage());
 		}
+	}
+	
+	
+	public void atualizar(Endereco x) {
+		try {
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
+	}
 	
 	public void excluir(Endereco x) {
 		try {
@@ -75,7 +91,11 @@ public class EnderecoServico {
 	public Endereco buscar(int cod) {
 		return dao.buscar(cod);
 	}
-	
+
+	public List<Endereco> buscarEnderecosCliente(Cliente cli) {
+		return dao.buscarEnderecosCliente(cli);
+	}
+
 	public List<Endereco> buscarTodos() {
 		return dao.buscarTodos();
 	}

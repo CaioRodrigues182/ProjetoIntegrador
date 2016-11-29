@@ -35,6 +35,7 @@ public class ItemEntregueServico {
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();
+			x.getEntrega().addItemEntregue(x);
 		} catch (RuntimeException e) {
 			if (Transaction.isActive()) {
 				Transaction.rollback();

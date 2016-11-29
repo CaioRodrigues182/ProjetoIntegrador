@@ -2,10 +2,12 @@ package web;
 
 import javax.servlet.http.HttpServletRequest;
 
+import dominio.Cliente;
 import dominio.Endereco;
 import dominio.Entrega;
 import dominio.ItemEntregue;
 import dominio.Produto;
+import servico.ClienteServico;
 import servico.EntregaServico;
 import servico.ProdutoServico;
 
@@ -13,7 +15,14 @@ public class Instanciar {
 
 	public static Endereco endereco (HttpServletRequest request) {
 		Endereco aux = new Endereco();
+		ClienteServico cs = new ClienteServico();
 		String s;
+
+		s = request.getParameter("codCliente");
+		if(s!=null && !s.isEmpty()) {
+			Cliente cli = cs.buscar(Integer.parseInt(s));
+			aux.setCliente(cli);
+		}
 		
 		s = request.getParameter("logadouro");
 		if(s!=null && !s.isEmpty()) {

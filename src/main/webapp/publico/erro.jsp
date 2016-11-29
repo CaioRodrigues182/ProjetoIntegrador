@@ -17,10 +17,9 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>Página inicial</h1>
+        <h1>Erro!</h1>
       </div>
-      <p class="lead">Sistema de Entregas.</p>
-      <p>Projeto desenvolvido por Caio Rodrigues e João Henrique.</p>
+      <p class="lead">${msg}</p>
     </div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>

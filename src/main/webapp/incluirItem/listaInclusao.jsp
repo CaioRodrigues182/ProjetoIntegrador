@@ -22,38 +22,38 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Detalhes do Produto</h1>
+			<h1>Detalhes do Item</h1>
 		</div>
 
 		<div>
 			<ul class="list-group">
-				<li class="list-group-item">Código: ${item.codProduto}</li>
-				<li class="list-group-item">Nome: ${item.nome}</li>
-				<li class="list-group-item">Preço: ${item.preco}</li>
+				<li class="list-group-item">Código: ${item.codFilme}</li>
+				<li class="list-group-item">Quantidade: ${item.titulo}</li>
+				<li class="list-group-item">Preço: ${item.titulo}</li>
+				<li class="list-group-item">Sub Total do Item: ${item.titulo}</li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="container">
 		<div class="page-header">
-			<h2>Fornecedores</h2>
+			<h2>Detalhes da Entrega</h2>
 		</div>
 
 		<div>
 			<table class="table">
 			<thead>
 				<tr>
-					<th>Nome</th>
-					<th>Fone</th>
-					<th>Email</th>
+					<th>Codigo</th>
+					<th>Data</th>
+					<th>Valor Total</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${items.fornecedor}" var="x">
+				<c:forEach items="${entrega.itens}" var="x">
 					<tr>
-						<td>${x.nome}</td>
-						<td>${x.fone}</td>
-						<td>${x.email}</td>
+						<td>${x.entrega.codItemEntregue}</td>
+						<td>${x.personagem}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

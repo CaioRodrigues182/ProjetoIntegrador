@@ -79,7 +79,7 @@ public class Instanciacao extends HttpServlet {
 		ItemEntregue i4 = new ItemEntregue(null, 7, p4, en2);
 		
 		ItemEntregue i5 = new ItemEntregue(null, 2, p5, en3);
-		ItemEntregue i6 = new ItemEntregue(null, 3, p5, en3);
+		ItemEntregue i6 = new ItemEntregue(null, 3, p6, en3);
 		
 		ItemEntregue i7 = new ItemEntregue(null, 5, p1, en4);
 		ItemEntregue i8 = new ItemEntregue(null, 1, p6, en4);

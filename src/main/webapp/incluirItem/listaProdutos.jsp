@@ -24,19 +24,22 @@
 		<div class="page-header">
 			<h1>Inserir Produtos</h1>
 		</div>
+		
 
-		<form method="get" name="myform" class="form-horizontal"
-			action="<%=request.getContextPath()%>/filme/resultado">
+		<form method="post" name="myform" class="form-horizontal"
+			action="<%=request.getContextPath()%>/entregas/inclusao">
+			
+			<input type="hidden" value ="${codEntrega}" name="codEntrega"/> 
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="artista">Selecione
+				<label class="col-sm-2 control-label" for="codProduto">Selecione
 					o Produto:</label>
 				<div class="col-sm-5">
-					<select name="codArtista" class="form-control">
-						<option value="">-- Selecione o produto--</option>
+					<select name="codProduto" class="form-control">
+						<option value="">-- Selecione o Produto --</option>
 						<c:forEach items="${produto}" var="x">
 							<option value="${x.codProduto}" <c:if test="${x == produtoSelecionado}">selected="selected"</c:if>>
-								${x.nome}   
+								${x.nome}, R$ ${x.preco}   
 							</option>
 						</c:forEach>
 					</select>
@@ -45,10 +48,10 @@
 			
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label" for="anoMin">Quantidade:</label>
+				<label class="col-sm-2 control-label" for="quantidade">Quantidade:</label>
 				<div class="col-sm-5">
 					<input type="number" name="quantidade" id="quantidade"
-						value="" required="required"
+						value="${x.quantidade}" required="required"
 						class="form-control" />
 				</div>
 			</div>

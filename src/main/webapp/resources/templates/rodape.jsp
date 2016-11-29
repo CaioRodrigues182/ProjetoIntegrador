@@ -1,7 +1,7 @@
 <footer class="footer">
 	<div class="container">
 		<p class="text-muted">
-			Educandoweb - <a href="https://youtube.com/educandoweb">youtube.com/educandoweb</a>
+			Projeto Integrador 4 - 2016
 		</p>
 	</div>
 </footer>

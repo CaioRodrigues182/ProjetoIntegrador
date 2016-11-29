@@ -23,8 +23,11 @@ public class ItemListarProdutos extends HttpServlet {
   	 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
+    	
     	ProdutoServico ps = new ProdutoServico();
+    	Integer codEntrega = Integer.parseInt(request.getParameter("codEntrega"));
 		List<Produto> produtos = ps.buscarTodos();
+		request.setAttribute("codEntrega", codEntrega);
     	request.setAttribute("produto", produtos);
     	request.getRequestDispatcher(DESTINO).forward(request, response);
     	

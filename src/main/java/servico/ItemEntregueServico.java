@@ -76,6 +76,6 @@ public class ItemEntregueServico {
 	}
 
 	public void validar(ItemEntregue x) throws ValidacaoException {
-
+		
 	}
 }

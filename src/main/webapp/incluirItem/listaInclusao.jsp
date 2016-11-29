@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sistema de Filmes</title>
+<title>Sistema de Entregas</title>
 <link
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -27,10 +27,10 @@
 
 		<div>
 			<ul class="list-group">
-				<li class="list-group-item">Código: ${item.codFilme}</li>
-				<li class="list-group-item">Quantidade: ${item.titulo}</li>
-				<li class="list-group-item">Preço: ${item.titulo}</li>
-				<li class="list-group-item">Sub Total do Item: ${item.titulo}</li>
+				<li class="list-group-item">Código: ${x.codItemEntregue}</li>
+				<li class="list-group-item">Quantidade: ${x.quantidade}</li>
+				<li class="list-group-item">Preço: ${x.preco}</li>
+				<li class="list-group-item">Sub Total do Item: ${x.subTotalDoItem}</li>
 			</ul>
 		</div>
 	</div>
@@ -52,8 +52,6 @@
 			<tbody>
 				<c:forEach items="${entrega.itens}" var="x">
 					<tr>
-						<td>${x.entrega.codItemEntregue}</td>
-						<td>${x.personagem}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

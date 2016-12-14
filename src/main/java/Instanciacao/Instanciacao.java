@@ -5,9 +5,6 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -98,12 +95,12 @@ public class Instanciacao extends HttpServlet {
 		cs.inserirAtualizar(c2);
 		cs.inserirAtualizar(c3);
 		
-		es.inserirAtualizar(e1);
-		es.inserirAtualizar(e2);
-		es.inserirAtualizar(e3);
-		es.inserirAtualizar(e4);
-		es.inserirAtualizar(e5);
-		es.inserirAtualizar(e6);
+		es.inserir(e1);
+		es.inserir(e2);
+		es.inserir(e3);
+		es.inserir(e4);
+		es.inserir(e5);
+		es.inserir(e6);
 		
 		fs.inserirAtualizar(f1);
 		fs.inserirAtualizar(f2);

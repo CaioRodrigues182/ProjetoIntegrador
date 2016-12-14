@@ -28,7 +28,7 @@ public class Cliente implements Serializable {
 	private List<Endereco> enderecos;
 	
 	public Cliente () {
-		enderecos = new LinkedList();
+		enderecos = new LinkedList<Endereco>();
 	}
 
 	public Cliente(Integer codCliente, String nome, String email, String cpf) {
@@ -37,7 +37,7 @@ public class Cliente implements Serializable {
 		this.nome = nome;
 		this.email = email;
 		this.cpf = cpf;
-		enderecos = new LinkedList();
+		enderecos = new LinkedList<Endereco>();
 	}
 
 	public Integer getCodCliente() {

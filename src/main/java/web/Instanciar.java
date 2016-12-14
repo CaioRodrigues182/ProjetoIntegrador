@@ -23,7 +23,12 @@ public class Instanciar {
 			Cliente cli = cs.buscar(Integer.parseInt(s));
 			aux.setCliente(cli);
 		}
-		
+
+		s = request.getParameter("codEndereco");
+		if(s!=null && !s.isEmpty()) {
+			aux.setCodEndereco(Integer.parseInt(s));
+		}
+
 		s = request.getParameter("logadouro");
 		if(s!=null && !s.isEmpty()) {
 			aux.setLogadouro(s);
